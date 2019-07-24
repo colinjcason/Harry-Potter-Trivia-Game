@@ -1,0 +1,12 @@
+body {
+    font-family: 'Metal Mania', cursive;
+    width: 100%;
+    background-color: aqua;
+}
+
+#questions {
+    height: 950px;
+    width: 500px;
+    margin: 100px 100px;
+    display: none;
+}

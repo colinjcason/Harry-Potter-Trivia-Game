@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="eng">
 
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Magical World of Harry Potter</title>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <!-- <link src="TriviaGame\assets\css\reset.css"> -->
+    <link src="assets\css\reset.css">
     <link rel="stylesheet" type="text/css" href="assets\css\style.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+    <div id="container">
+        <div id="questions">
+            <h1>Harry Potter Magical Trivia!</h1>
+            <h3>Time Remaining: <span id="time">60</span></h3>
+            <p>1. Which of the Marauders was not an animagus?</p>
+            <input class="marauders-radio" type="radio" name="marauders" value="Remus Lupin">Remus Lupin
+            <input class="marauders-radio" type="radio" name="marauders" value="Sirius Black">Sirius Black
+            <input class="marauders-radio" type="radio" name="marauders" value="Peter Pettigrew">Peter Pettigrew
+            <input class="marauders-radio" type="radio" name="marauders" value="James Potter">James Potter
+            <br>
 
-    <div id="start"><button>Click to Start</button></div>
+            <p>2. Which of the Deathly Hallows does Harry receive as a Christmas gift?</p>
+            <input class="marauders-radio" type="radio" name="gift" value="Cloak of Invisibility">Cloak of Invisibility
+            <input class="marauders-radio" type="radio" name="gift" value="Elder Wand">Elder Wand
+            <input class="marauders-radio" type="radio" name="gift" value="Resurrection Stone">Resurrection Stone
+            <br>
 
-    <div id="questions">
-        <h1>Harry Potter Magical Trivia!</h1>
-        <h3>Time Remaining: </h3><span id="time"></span>
-        <p>Which of the Marauders was not an animagus?</p>
-        <input type="radio" name="marauders" value="Remus Lupin">Remus Lupin
-        <input type="radio" name="marauders" value="Sirius Black">Sirius Black
-        <input type="radio" name="marauders" value="Peter Pettigrew">Peter Pettigrew
-        <input type="radio" name="marauders" value="James Potter">James Potter
+            <p>3. What type of magical creature is Buckbeak?</p>
+            <input class="creature-radio" type="radio" name="creature" value="Dragon">Dragon
+            <input class="creature-radio" type="radio" name="creature" value="Unicorn">Unicorn
+            <input class="creature-radio" type="radio" name="creature" value="Thestral">Thestral
+            <input class="creature-radio" type="radio" name="creature" value="Hippogriff">Hippogriff
+            <br>
 
-        <p>Which of the Deathly Hallows does Harry receive as a Christmas gift?</p>
-        <input type="radio" name="gift" value="Cloak of invisibility">Cloak of Invisibility
-        <input type="radio" name="gift" value="Elder Wand">Elder Wand
-        <input type="radio" name="gift" value="Resurrection Stone">Resurrection Stone
-        
-        <p>What type of magical creature is Buckbeak?</p>
-        <input type="radio" name="creature" value="Dragon">Dragon
-        <input type="radio" name="creature" value="Unicorn">Unicorn
-        <input type="radio" name="creature" value="Thestral">Thestral
-        <input type="radio" name="creature" value="Hippogriff">Hippogriff
-        
-        <p>What profession are Hermione Granger's Muggle parents?</p>
-        <input type="radio" name="profession" value="Chefs">Chefs
-        <input type="radio" name="profession" value="Dentists">Dentist
-        <input type="radio" name="profession" value="Opticians">Opticians
-        <input type="radio" name="profession" value="Artists">Artists
+            <p>4. What profession are Hermione Granger's Muggle parents?</p>
+            <input class="profession-radio" type="radio" name="profession" value="Chefs">Chefs
+            <input class="profession-radio" type="radio" name="profession" value="Dentists">Dentists
+            <input class="profession-radio" type="radio" name="profession" value="Opticians">Opticians
+            <input class="profession-radio" type="radio" name="profession" value="Artists">Artists
+            <br>
 
-        <p>What did James Potter's school friends nickname him?</p>
-        <input type="radio" name="nickname" value="Padfoot">Padfoot
-        <input type="radio" name="nickname" value="Prongs">Prongs
-        <input type="radio" name="nickname" value="Mooney">Mooney
-        <input type="radio" name="nickname" value="Wormtail">Wormtail
+            <p>5. What did James Potter's school friends nickname him?</p>
+            <input class="nickname-radio" type="radio" name="nickname" value="Padfoot">Padfoot
+            <input class="nickname-radio" type="radio" name="nickname" value="Prongs">Prongs
+            <input class="nickname-radio" type="radio" name="nickname" value="Mooney">Mooney
+            <input class="nickname-radio" type="radio" name="nickname" value="Wormtail">Wormtail
+            <br>
+
+            <div id="done">
+                <h2>Done</h2>
+            </div>
+
+        </div>
     </div>
-
-
-
-
-
-
-
-
 
     <script src="assets\javascript\app.js"></script>
 

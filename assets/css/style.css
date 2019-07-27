@@ -6,7 +6,7 @@ body {
     width: 100%;    
 }
 
-#start {
+.start {
     background-color: rgb(255, 255, 255, 0.5);
     border: 3px solid black;
     text-align: center;
@@ -22,7 +22,6 @@ body {
     background-color: rgb(255, 255, 255, 0.5);
     border: 3px solid black;
     text-align: center;
-    display: none;
     display: inline-block;
     padding: 20px;
     margin-left: 20%;

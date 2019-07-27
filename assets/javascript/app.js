@@ -1,107 +1,91 @@
-$(document).ready(function() {
-
-// declare variables to be used
-var answers = ["Remus Lupin","Cloak of Invisibility", "Hippogriff", "Dentists", "Prongs"];
-
-var correctAnswers = 0;
-var incorrectAnswers = 0;
-var time = 5;
+// declare variables
+var time = 60;
 var intervalId;
 var clockRunning = false;
+var answers = ["Remus Lupin","Cloak of Invisibility", "Hippogriff", "Dentists", "Prongs"];
+var correctAnswers = 0;
+var incorrectAnswers = 0;
 
-// set the timer
 
-$("#start-button").on("click", function() {
-   window.location.replace("trivia.html");
-   
-})
-
+// timer function
 function timer() {
     if(!clockRunning) {
     time--;
+    console.log(time);
     $("#time").html(time);
     if(time == 0) {
         alert("Time's up!");
         stop();
+        gameOver();
     }
 }
 }
-
-intervalId = setInterval(timer, 1000);
-
+// timer stop function when time is up
 function stop() {
     clearInterval(intervalId);
 }
 
-// when the user clicks "Done", check the user input against the answers
+// wait for the page to load to begin the game
+$(document).ready(function() {
+
+    // keep the questions and results hidden at start of game
+    $("#questions").hide();
+    $("#results").hide();
+
+// "start" will set the timer running, hide the start screen, then show the questions
+$("#start-button").on("click", function() {
+intervalId = setInterval(timer, 1000);
+$(".start").hide();
+$("#questions").show();
+});
+
+// when "done" is clicked the gameOver function is initiated and timers is stopped
 $('#done').on("click", function() {
+    stop();
+    gameOver();
+});
 
-    var answer1 = $("input[name='marauders']:checked").val();
-    console.log(answer1);
-    var answer2 = $("input[name='gift']:checked").val();
-    console.log(answer2);
-    var answer3 = $("input[name='creature']:checked").val();
-    var answer4 = $("input[name='profession']:checked").val();
-    var answer5 = $("input[name='nickname']:checked").val();
+});
 
-    // empty questions div
-    $('#container').empty();
-
-    $('#container').html('<div id="results"><h1>All Done!</h1><br><br><br><p>Correct Answers: <span id="number-correct"></span></p><br><p>Incorrect Answers: <span id="number-incorrect"></span></p><br><br><p id="restart">Start Over?</p></div>');
-
-    if(answer1 == answers[0]) {
-        correctAnswers++;
+// need a variable to hold the value of each radio button selected
+var selected = [];
+// gameOver function hides the questions and shows the results
+function gameOver() {
+    $("#questions").hide();
+    // get the value for each radion button and push it to the empty array
+        $("input:checked").each(function() {
+        selected.push($(this).val());
+        console.log(selected.toLocaleString());
+    });
+    
+        // compare radio selections to correct answers array
+        for(var i = 0; i < answers.length; i++) {
+            if(selected[i] === answers[i]) {
+                correctAnswers++;
+            }
+            else {
+                incorrectAnswers++;
+            }
+        }
+    // print results to the html
         $("#number-correct").text(correctAnswers);
-    }
-    else {
-        incorrectAnswers++;
-        $("#number-incorrect").text(incorrectAnswers);        
-    }
-
-    if(answer2 == answers[1]) {
-        correctAnswers++;
-        $("#number-correct").text(correctAnswers);
-    }
-    else {
-        incorrectAnswers++;
         $("#number-incorrect").text(incorrectAnswers);
-        console.log(answer2);
+
+        $("#results").show();
     }
 
-    if(answer3 == answers[2]) {
-        correctAnswers++;
-        $("#number-correct").text(correctAnswers);
+    function restart() {
+        time = 60;
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        $("#results").hide();
+        $(".start").show();
+        
     }
-    else {
-        incorrectAnswers++;
-        $("#number-incorrect").text(incorrectAnswers);
-        console.log(answer3);
-    }
-
-    if(answer4 == answers[3]) {
-        correctAnswers++;
-        $("#number-correct").text(correctAnswers);
-    }
-    else {
-        incorrectAnswers++;
-        $("#number-incorrect").text(incorrectAnswers);
-        console.log(answer4);
-    }
-
-    if(answer5 == answers[4]) {
-        correctAnswers++;
-        $("#number-correct").text(correctAnswers);
-    }
-    else {
-        incorrectAnswers++;
-        $("#number-incorrect").text(incorrectAnswers);
-        console.log(answer5);
-    }    
 
     $("#restart").on("click", function() {
-        window.location.replace("start.html");
-    });
+        restart();
+    })
 
-});
+    
 
-});

@@ -19,27 +19,36 @@
 </head>
 
 <body>
+
+    <section class="start">
+        <h1>Harry Potter Magical Trivia!</h1>
+
+        <div id="start-button">
+            <p>Click to Start</p>
+        </div>
+    </section>
+
     <div id="container">
         <div id="questions">
             <h1>Harry Potter Magical Trivia!</h1>
             <h3>Time Remaining: <span id="time">60</span></h3>
             <p>1. Which of the Marauders was not an animagus?</p>
-            <input class="marauders-radio" type="radio" name="marauders" value="Remus Lupin">Remus Lupin
-            <input class="marauders-radio" type="radio" name="marauders" value="Sirius Black">Sirius Black
-            <input class="marauders-radio" type="radio" name="marauders" value="Peter Pettigrew">Peter Pettigrew
-            <input class="marauders-radio" type="radio" name="marauders" value="James Potter">James Potter
+            <input type="radio" name="marauders" value="Remus Lupin">Remus Lupin
+            <input type="radio" name="marauders" value="Sirius Black">Sirius Black
+            <input type="radio" name="marauders" value="Peter Pettigrew">Peter Pettigrew
+            <input type="radio" name="marauders" value="James Potter">James Potter
             <br>
 
             <p>2. Which of the Deathly Hallows does Harry receive as a Christmas gift?</p>
-            <input class="marauders-radio" type="radio" name="gift" value="Cloak of Invisibility">Cloak of Invisibility
-            <input class="marauders-radio" type="radio" name="gift" value="Elder Wand">Elder Wand
-            <input class="marauders-radio" type="radio" name="gift" value="Resurrection Stone">Resurrection Stone
+            <input type="radio" name="gift" value="Cloak of Invisibility">Cloak of Invisibility
+            <input type="radio" name="gift" value="Elder Wand">Elder Wand
+            <input type="radio" name="gift" value="Resurrection Stone">Resurrection Stone
             <br>
 
             <p>3. What type of magical creature is Buckbeak?</p>
-            <input class="creature-radio" type="radio" name="creature" value="Dragon">Dragon
-            <input class="creature-radio" type="radio" name="creature" value="Unicorn">Unicorn
-            <input class="creature-radio" type="radio" name="creature" value="Thestral">Thestral
+            <input type="radio" name="creature" value="Dragon">Dragon
+            <input type="radio" name="creature" value="Unicorn">Unicorn
+            <input type="radio" name="creature" value="Thestral">Thestral
             <input class="creature-radio" type="radio" name="creature" value="Hippogriff">Hippogriff
             <br>
 
@@ -60,8 +69,20 @@
             <div id="done">
                 <h2>Done</h2>
             </div>
-
         </div>
+    </div>
+
+    <div id="results">
+        <h1>All Done!</h1>
+        <br>
+        <br>
+        <br>
+        <p>Correct Answers: <span id="number-correct"></span></p>
+        <br>
+        <p>Incorrect Answers: <span id="number-incorrect"></span></p>
+        <br>
+        <br>
+        <p id="restart">Try Again?</p>
     </div>
 
     <script src="assets\javascript\app.js"></script>

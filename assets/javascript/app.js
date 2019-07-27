@@ -70,22 +70,25 @@ function gameOver() {
     // print results to the html
         $("#number-correct").text(correctAnswers);
         $("#number-incorrect").text(incorrectAnswers);
-
         $("#results").show();
     }
 
+    // restart function sets everything back to 0, hides all elements except the start page
     function restart() {
         time = 60;
         correctAnswers = 0;
         incorrectAnswers = 0;
         $("#results").hide();
         $(".start").show();
-        
+        // uncheck all radio buttons
+        $("input:checked").each(function() {
+            this.checked = false;
+        });
     }
-
+    // restart button resets the game
     $("#restart").on("click", function() {
         restart();
-    })
+    });
 
     
 

@@ -78,6 +78,7 @@ function gameOver() {
         time = 60;
         correctAnswers = 0;
         incorrectAnswers = 0;
+        selected = [];
         $("#results").hide();
         $(".start").show();
         // uncheck all radio buttons
